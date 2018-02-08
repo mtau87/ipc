@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageHttpMaterialSave
+{
+    string id = 1;
+    string title = 2;
+    int32 categoryId = 3;
+    string uePath = 4;
+    string matInfo = 5;
+    string thumbnailUrl = 6;
+    int64 createTime = 7;
+    int64 updateTime = 8;
+    string pakUrl = 9;
+    string dependentFileList = 10;
+}
+
+message CMessageMaterialSaveRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string id = 3;
+}
+
+message CMessageMaterialSaveResponse
+{
+	int32 type = 1;
+	string uuid = 2;
+	int32 state = 3;
+}
+
+message CMessageMaterialSaveProcessResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 percent = 3;
+}

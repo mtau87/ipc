@@ -1,0 +1,17 @@
+syntax = "proto3";
+package d5;
+
+message CMessageFeedBackSuggestionRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 mood = 3;
+    string mesage = 4;
+}
+
+message CMessageFeedBackSuggestionResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}

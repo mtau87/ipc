@@ -1,0 +1,49 @@
+<html>  
+    <head>  
+        <script type="text/javascript" src="./bundle.js"></script>  
+    </head>  
+  
+    <body>  
+  
+        <button onclick="">1111</button>  
+        <script>  
+        	
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000).toString(
+                    16).substring(1)
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4(
+                ) + s4() + s4()
+}
+// ArrayBuffer转为字符串，参数为ArrayBuffer对象
+function ab2str(buf) {
+    return String.fromCharCode.apply(null, new Uint16Array(buf))
+}
+
+// 字符串转为ArrayBuffer对象，参数为字符串
+function str2ab(str) {
+    var buf = new ArrayBuffer(str.length * 2) // 每个字符占用2个字节
+    var bufView = new Uint16Array(buf)
+    for (var i = 0, strLen = str.length; i < strLen; i++) {
+        bufView[i] = str.charCodeAt(i)
+    }
+    return buf
+}
+
+       var message = new proto.d5.CMessageLoginRequest();  
+   message.setUser('ming.tao@d5techs.com');  
+    message.setPassword('111111')
+    message.setUuid(guid())
+var bytes = message.serializeBinary();
+var string = new TextDecoder("utf-8").decode(bytes);
+
+console.log(bytes); 
+console.log(string);  
+  
+var data = proto.d5.CMessageLoginRequest.deserializeBinary(bytes);  
+console.log(data);  
+console.log(data.getUser());   
+        </script>  
+    </body>  
+</html>  

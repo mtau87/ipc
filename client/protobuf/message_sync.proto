@@ -1,0 +1,23 @@
+syntax = "proto3";
+package d5;
+
+message CMessageSyncRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 level = 3;
+}
+
+message CMessageSyncResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}
+
+message CMessageSyncProcess
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 percent = 3;
+}

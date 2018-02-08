@@ -1,0 +1,17 @@
+syntax = "proto3";
+import "db2.proto";
+package d5.db2;
+
+message CMessageAddProductImageRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    product_image data = 3;
+}
+
+message CMessageAddProductImageResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}

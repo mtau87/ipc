@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessagePlanDeleteRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string id = 3;
+    int64 updateTime = 4;
+}
+
+message CMessagePlanDeleteResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}

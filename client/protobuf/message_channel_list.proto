@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageChannelListRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+}
+
+message CMessageChannelListResponse
+{
+    message CMessageHttpChannelUnit
+    {
+        int32 companyId = 1;
+        string companyName = 2;
+    }
+
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    repeated CMessageHttpChannelUnit list = 4;
+}

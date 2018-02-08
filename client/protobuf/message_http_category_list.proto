@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageHttpCategoryList
+{
+  message CMessageHttpCategoryUnit
+  {
+    int32 id = 1;
+    string title = 2;
+    int32 companyId = 3;
+    int32 parentId = 4;
+    int32 level = 5;
+  }
+  repeated CMessageHttpCategoryUnit list = 1;
+}

@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageMaterialListRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 companyid = 3;
+    uint64 updatetime = 4;
+    int32 pageSize = 5;
+    int32 pageNum = 6;
+}
+
+message CMessageMaterialListUnit
+{
+    string id = 1;
+    string title = 2;
+    string uePath = 3;
+    string matInfo = 4;
+    string thumbnailUrl = 5;
+    int32 isDel = 6;
+    int32 userId = 7;
+    int32 companyId = 8;
+    int64 createTime = 9;
+    int64 updateTime = 10;
+    int32 categoryId = 11;
+    string pakUrl = 12;
+    string dependentFileList = 13;
+}
+
+message CMessageMaterialList
+{
+    repeated CMessageMaterialListUnit rows = 1;
+    int32 total = 2;
+}
+
+message CMessageMaterialListResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    CMessageMaterialList list = 4;
+}

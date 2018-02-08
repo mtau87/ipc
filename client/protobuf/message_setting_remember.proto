@@ -1,0 +1,32 @@
+syntax = "proto3";
+import "db2.proto";
+package d5.db2;
+
+message CMessageSettingRememberRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  string userId = 3;
+}
+
+message CMessageSettingRememberResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+  setting_remember data = 4;
+}
+
+message CMessageAddSettingRememberRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    setting_remember data = 3;
+}
+
+message CMessageAddSettingRememberResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}

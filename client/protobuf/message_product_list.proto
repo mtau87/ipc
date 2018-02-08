@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageProductListRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 companyid = 3;
+    uint64 updatetime = 4;
+    int32 pageSize = 5;
+    int32 pageNum = 6;
+}
+
+message CMessageProductUnit
+{
+    message CMessageFurnitureUnit
+    {
+        string productId = 1;
+        string uePath = 2;
+        string pakUrl = 3;
+        float length = 4;
+        float depth = 5;
+        float height = 6;
+        int32 isInteractive = 7;
+        int32 intelligentType = 8;
+        int32 furnitureStyleId = 9;
+        int32 furnitureMainMaterialId = 10;
+        string detailInfo = 11;
+        repeated int32 furnitureColorIdList = 12;
+    }
+
+    message CMessageProductImageUnit
+    {
+        string id = 1;
+        int32 displayIndex = 2;
+        string fileUrl = 3;
+        string productId = 4;
+    }
+
+    message CMessageProductBuildingMaterial
+    {
+        string productId = 1;
+        int32 isForFloor = 2;
+        int32 isForWall = 3;
+        int32 isForCeiling = 4;
+        string materialId = 5;
+        string detailInfo = 6;
+        int32 length = 7;
+        int32 width = 8;
+    }
+
+    string id = 1;
+    string title = 2;
+    float price = 3;
+    int64 createTime = 4;
+    int64 updateTime = 5;
+    int32 brandId = 6;
+    int32 productType = 7;
+    int32 isDel = 8;
+    int32 userId = 9;
+    int32 companyId = 10;
+    string description = 11;
+    int32 categoryId = 12;
+    string buyUrl = 13;
+    CMessageFurnitureUnit furniture = 14;
+    CMessageProductBuildingMaterial buildingMaterial = 15;
+    repeated CMessageProductImageUnit productImageList = 16;
+    string dependentFileList = 17;
+    string brandTitle = 18;
+    string productCode = 19;
+}
+
+message CMessageProductList
+{
+    repeated CMessageProductUnit rows = 1;
+    int32 total = 2;
+}
+
+message CMessageProductListResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    CMessageProductList list = 4;
+}

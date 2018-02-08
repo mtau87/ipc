@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageProductStyleSaveRequest
+{
+    message CMessageProductStyleSaveUnit
+    {
+        message CMessageHttpStyleMaterialMapUnit
+        {
+            string id = 1;
+            string materialId = 2;
+            string styleId = 3;
+            int32 materialIndex = 4;
+            string elementName = 5;
+        }
+        string id = 1;
+        string title = 2;
+        string thumbnailUrl = 3;
+        int32 displayIndex = 4;
+        string productId = 5;
+        int64 create_time = 6;
+        int64 update_time = 7;
+        repeated CMessageHttpStyleMaterialMapUnit styleMaterialMapList = 8;
+    }
+
+    int32 type = 1;
+    string uuid = 2;
+    CMessageProductStyleSaveUnit parameter = 3;
+}
+
+message CMessageProductStyleSaveResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}

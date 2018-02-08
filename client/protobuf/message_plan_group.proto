@@ -1,0 +1,61 @@
+syntax = "proto3";
+import "message_http_plan_group.proto";
+package d5;
+
+message CMessageGetPlanGroupRequest
+{
+	int32 type = 1;
+        string uuid = 2;
+}
+
+message CMessageGetPlanGroupResponse
+{
+	int32 type = 1;
+        string uuid = 2;
+        CMessageHttpGetPlanGroupResponse getList = 3;
+        int32 state = 4;
+}
+
+message CMessageAddPlanGroupRequest
+{
+	int32 type = 1;
+        string uuid = 2;
+        string name = 3;
+}
+
+message CMessageAddPlanGroupResponse
+{
+	int32 type = 1;
+        string uuid = 2;
+	CMessageHttpAddPlanGroupResponse addGroup = 3;
+        int32 state = 4;
+}
+
+message CMessageUpdatePlanGroupRequest
+{
+	int32 type = 1;
+        string uuid = 2;
+        int32 id = 3;
+        string name = 4;
+}
+
+message CMessageUpdatePlanGroupResponse
+{
+        int32 type = 1;
+        string uuid = 2;
+        int32 state = 3;
+}
+
+message CMessageDeletePlanGroupRequest
+{
+	int32 type =1;
+        string uuid = 2;
+        int32 id = 3;
+}
+
+message CMessageDeletePlanGroupResponse
+{
+        int32 type = 1;
+        string uuid = 2;
+        int32 state = 3;
+}

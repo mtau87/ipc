@@ -1,0 +1,57 @@
+syntax = "proto3";
+package d5;
+
+message CMessagePlanListRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 companyid = 3;
+    uint64 updatetime = 4;
+    int32 pageSize = 5;
+    int32 pageNum = 6;
+}
+
+message CMessageHttpPlanUnit
+{
+    string id = 1;
+    string title = 2;
+    float size = 3;
+    string pakUrl = 5;
+    string thumbnailUrl = 6;
+    string floorEditFileUrl = 7;
+    string detailInfo = 8;
+    string designFileUrl = 9;
+    int32 districtId = 10;
+    int32 propertyTypeId = 11;
+    int32 roomTypeId = 12;
+    int32 templateTypeId = 13;
+    int32 isDel = 14;
+    int64 createTime = 15;
+    int64 updateTime = 16;
+    int32 userId = 17;
+    int32 companyId = 18;
+    string floorRefUrl = 20;
+    float floorRefWidth = 21;
+    float floorRefHeight = 22;
+    int32 groupId = 25;
+    int32 condoId = 26;
+    string userName = 27;
+    string dependentFileList = 28;
+    int32 source = 29;
+    string quotationInfo = 30;
+    int32 isPrivate = 31;
+}
+
+message CMessageHttpPlanList
+{
+    repeated CMessageHttpPlanUnit rows = 1;
+    int32 total = 2;
+}
+
+message CMessagePlanListResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    CMessageHttpPlanList list = 4;
+}

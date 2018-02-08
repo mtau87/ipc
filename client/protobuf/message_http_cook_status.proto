@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageHttpCookStatus
+{
+  string id = 1;
+  string designId = 2;
+  string layoutId = 3;
+  string inputUrl = 4;
+  string outputUrl = 5;
+  int32 cookStage = 6;
+  int64 submitTime = 7;
+  int64 startTime = 8;
+  int64 finishTime = 9;
+  int32 tryCount = 10;
+  string errorInfo = 11;
+  int32 userId = 12;
+  string hostName = 13;
+  int32 pakSize = 14;
+  int64 expectedFinishTime = 15;
+  int64 currentTime = 16;
+}
+
+message CMessageDesignHttpCookStatus
+{
+  string id = 1;
+  string designId = 2;
+  string layoutId = 3;
+  string inputUrl = 4;
+  string outputUrl = 5;
+  int32 cookStage = 6;
+  int64 submitTime = 7;
+  int64 startTime = 8;
+  int64 finishTime = 9;
+  int32 tryCount = 10;
+  string errorInfo = 11;
+  int32 userId = 12;
+  string hostName = 13;
+  int32 pakSize = 14;
+  string designFileUrl = 15;
+  int64 expectedFinishTime = 16;
+  int64 currentTime = 17;
+}

@@ -1,0 +1,40 @@
+syntax = "proto3";
+import "message_http_login.proto";
+
+package d5;
+
+message CMessageLoginRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  string user = 3;
+  string password = 4;
+  int32 remember = 5;
+}
+
+message CMessageLoginResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+  CMessageLoginMsg list = 4;
+}
+
+message CMessageLoginInfo
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    string token = 4;
+    int32 companyId = 5;
+    int32 roleId = 6;
+    int32 userId = 7;
+    string companyLogoUrl = 8;
+    string userName = 9;
+}
+
+message CMessageLogout
+{
+    int32 type = 1;
+    string uuid = 2;
+}

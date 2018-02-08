@@ -1,0 +1,45 @@
+syntax = "proto3";
+import "db2.proto";
+package d5.db2;
+
+message CMessageLastUserLoginRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+}
+
+message CMessageLastUserLoginResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+  user_login data = 4;
+}
+
+message CMessageAddUserLoginRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    user_login data = 3;
+}
+
+message CMessageAddUserLoginResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}
+
+
+message CMessageClearUserLoginRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+}
+
+message CMessageClearUserLoginResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}

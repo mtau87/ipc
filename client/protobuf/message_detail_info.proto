@@ -1,0 +1,54 @@
+syntax = "proto3";
+package d5;
+
+message CMessagePlanDesignDetailInfo
+{
+    int64 max_length = 1;
+    string start_location = 2;
+    string start_rotation = 3;
+    string floor_center = 4;
+    repeated string room_centers = 5;
+    repeated string fileList = 6;
+}
+
+message CMessageMaterialInfo
+{
+    string matInfo = 1;
+    string uePath = 2;
+    string thumbnailUrl = 3;
+    string title = 4;
+    string pakUrl = 5;
+    string parentPak = 6;
+}
+
+message CMessageFurnitureDetailInfo
+{
+    message CMessageStyleDatas
+    {
+        message CMessageElements
+        {
+            int32 materialIndex = 1;
+            string elementName = 2;
+            CMessageMaterialInfo materialData = 3;
+        }
+
+        bool bActive = 1;
+        string thumbnailPath = 2;
+        repeated CMessageElements elements = 3;
+        string styleId = 4;
+    }
+
+    message CMessageOriginalScale
+    {
+        int64 x = 1;
+        int64 y = 2;
+        int64 z = 3;
+    }
+    int32 detailVersion = 1;
+    string furnitureId = 2;
+    string otherDetails = 3;
+    repeated CMessageStyleDatas styleDatas = 4;
+    string customDetails = 5;
+    repeated string fileList = 6;
+    CMessageOriginalScale originalScale = 7;
+}

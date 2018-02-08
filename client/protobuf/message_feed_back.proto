@@ -1,0 +1,101 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageFeedBackRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string protocalVersion = 3;
+    string hitType = 4;
+    string trackingId = 5;
+    string clientId = 6;
+    string userId = 7;
+    string appName = 8;
+    string screenName = 9;
+    string appVersion = 10;
+}
+
+message CMessageFeedBackReponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}
+
+message CMessageEventTrackingRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string version = 3;
+    string trackingId = 4;
+    string clientId = 5;
+    string event = 6;
+    string category = 7;
+    string action = 8;
+    string label = 9;
+    string value = 10;
+}
+
+message CMessageEventTrackingResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}
+
+message CMessageImpressionsRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string version = 3;
+    string trackingId = 4;
+    string clientId = 5;
+    string pageView = 6;
+    string hostName = 7;
+    string page = 8;
+    string title = 9;
+    string impression = 10;
+    string impressionId = 11;
+    string impressionName = 12;
+    string impressionCategory = 13;
+    string impressionBrand = 14;
+    string impressionVariant = 15;
+    string impressionPosition = 16;
+    string impressionCustom = 17;
+}
+
+message CMessageImpressionsResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}
+
+message CMessageActionRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string version = 3;
+    string trackingId = 4;
+    string clientId = 5;
+    string eventType = 6;
+    string category = 7;
+    string action = 8;
+    string label = 9;
+    string productAction = 10;
+    string productID = 11;
+    string productName = 12;
+    string productCategory = 13;
+    string productBrand = 14;
+    string productVariant = 15;
+    string productPosition = 16;
+    string productPrice = 17;
+}
+
+message CMessageActionResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}

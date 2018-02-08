@@ -1,0 +1,49 @@
+#ifndef IMMERSE_WORKER_H
+#define IMMERSE_WORKER_H
+
+#ifndef CLIENT_SIDE
+#define CLIENT_SIDE
+#endif
+
+#include <thread>
+#include <atomic>
+#include "Common.h"
+#include "D5MainLoop.hpp"
+#include "D5MainLoopSender.hpp"
+#include "message_login.pb.h"
+#include "message_download.pb.h"
+#include "message_upload.pb.h"
+#include "message_cook_status.pb.h"
+#include "message_terminate.pb.h"
+#include "message_category_list.pb.h"
+#include "message_http_category_list.pb.h"
+#include "message_http_plan_list.pb.h"
+#include "message_plan_list.pb.h"
+#include "message_product_list.pb.h"
+#include "message_sync.pb.h"
+#include "message_plan_group.pb.h"
+#include "message_http_plan_group.pb.h"
+#include "message_material_list.pb.h"
+#include "message_plan_save.pb.h"
+#include "message_plan_delete.pb.h"
+#include "message_product_save.pb.h"
+#include "message_product_delete.pb.h"
+#include "message_product_style_save.pb.h"
+#include "message_material_delete.pb.h"
+#include "message_material_save.pb.h"
+#include "message_plan_panorama_email.pb.h"
+#include "message_channel_list.pb.h"
+#include "message_feed_back.pb.h"
+#include "db1.pb.h"
+#include "db2.pb.h"
+#include "message_plan_design.pb.h"
+#include "message_product.pb.h"
+#include "message_furniture_color_map.pb.h"
+#include "message_plan_design_template.pb.h"
+#include "message_product_brand_temp.pb.h"
+#include "message_setting_remember.pb.h"
+#include "message_user_login.pb.h"
+#include "message_product_image.pb.h"
+#include "message_asset_material.pb.h"
+#include "message_feedback_suggestion.pb.h"
+#endif // IMMERSE_WORKER_H

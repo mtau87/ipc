@@ -1,0 +1,32 @@
+syntax = "proto3";
+import "db2.proto";
+package d5.db2;
+
+message CMessagePlanDesignTemplateRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  string id = 3;
+}
+
+message CMessagePlanDesignTemplateResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+  plan_desgin_template_statu data = 4;
+}
+
+message CMessageAddPlanDesignTemplateRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    plan_desgin_template_statu data = 3;
+}
+
+message CMessageAddPlanDesignTemplateResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}

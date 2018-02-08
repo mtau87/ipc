@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageLaunchRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+}
+
+message CMessageLaunchResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+}
+
+message CMessageHideWidgetRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}
+
+message CMessageHideWidgetResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+}

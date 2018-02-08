@@ -1,0 +1,78 @@
+syntax = "proto3";
+import "message_http_update_list.proto";
+package d5.widget;
+
+message CMessageAppUpdateRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 sqlId = 3;
+}
+
+message CMessageAppUpdateResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    d5.CMessageHttpUpdateList updateList = 4;
+}
+
+message CMessageUpdateLauncherRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    d5.CMessageHttpUpdateList updateList = 3;
+}
+
+message CMessageUpdateLauncherResponseProcess
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 size = 3;
+    int32 total = 4;
+    int32 timeLeft = 5;
+}
+
+message CMessageUpdateLauncherResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}
+
+message CMessageUpdateApplicationRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    d5.CMessageHttpUpdateList updateList = 3;
+}
+
+message CMessageUpdateApplicationResponseProcess
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 size = 3;
+    int32 total = 4;
+    int32 timeLeft = 5;
+}
+
+message CMessageUpdateApplicationResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}
+
+message CMessageUpdateDatabaseRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    d5.CMessageHttpUpdateList updateList = 3;
+}
+
+message CMessageUpdateDatabaseResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}

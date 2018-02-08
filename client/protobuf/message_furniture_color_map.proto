@@ -1,0 +1,32 @@
+syntax = "proto3";
+import "db2.proto";
+package d5.db2;
+
+message CMessageFurnitureColorMapRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  string productId = 3;
+}
+
+message CMessageFurnitureColorMapResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+  repeated furniture_color_map list = 4;
+}
+
+message CMessageAddFurnitureColorMapRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    furniture_color_map data = 3;
+}
+
+message CMessageAddFurnitureColorMapResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}

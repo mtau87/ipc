@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageDownloadRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  string url = 3;
+  string path = 4;
+}
+
+message CMessageDownloadResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  string url = 3;
+  int32 state = 4;
+}
+
+message CMessageDownloadProcessResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  string url = 3;
+  int32 size = 4;
+  int32 total = 5;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageLoginMsg
+{
+  string token = 1;
+  int32 companyId = 2;
+  int32 roleId = 3;
+  int32 userId = 4;
+  string companyName = 5;
+  int32 companyRole = 6;
+  string companyLogoUrl = 7;
+}

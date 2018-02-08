@@ -1,0 +1,104 @@
+syntax = "proto3";
+import "db2.proto";
+import "message_common.proto";
+
+package d5.db2;
+
+message CMessageAssetMaterialRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  string id = 3;
+  bool idValid = 4;
+  int32 companyId = 5;
+  bool companyIdValid = 6;
+  int32 categoryId = 7;
+  bool categoryIdValid = 8;
+  int32 materialType = 9;
+  bool materialTypeValid = 10;
+  enum Order
+  {
+    NORMAL = 0;
+    ASC = 1;
+    DESC = 2;
+  }
+  bool isPrivate = 11;
+  Order updateTime = 12;
+  int32 pageNum = 13;
+  int32 pageSize = 14;
+  string uePath = 15;
+  bool uePathValid = 16;
+  int32 userId = 17;
+  bool userIdValid = 18;
+  string title = 19;
+  bool titleValid = 20;
+}
+
+message CMessageAssetMaterialResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+  repeated asset_material list = 4;
+  repeated d5.CMessageDependentPakList fileList = 5;
+  int32 pageNum = 6;
+  int32 pageTotal = 7;
+}
+
+message CMessageAddAssetMaterialRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    asset_material data = 3;
+    d5.CMessageDependentPakList fileList = 4;
+}
+
+message CMessageAddAssetMaterialResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}
+
+message CMessageAddAssetMaterialProcessResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 percent = 3;
+}
+
+message CMessageDelAssetMaterialRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string id = 3;
+}
+
+message CMessageDelAssetMaterialResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}
+
+message CMessageAssetMaterialDownloadRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string id = 3;
+}
+
+message CMessageAssetMaterialDownloadResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    d5.CMessageDependentPakList fileList = 4;
+}
+
+message CMessageAssetMaterialDownloadProcessResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 percent = 3;
+}

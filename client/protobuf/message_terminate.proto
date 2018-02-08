@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageTerminateRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+}
+
+message CMessageTerminateResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+}
+
+message CMessageFusionReady
+{
+    int32 type = 1;
+    string uuid = 2;
+}
+
+message CMessageFusionClose
+{
+    int32 type = 1;
+    string uuid = 2;
+}
+
+message CMessageFusionMaximize
+{
+    int32 type = 1;
+    string uuid = 2;
+}

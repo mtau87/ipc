@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageCookStatusRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  string id = 3;
+  int32 task_type = 4;
+}
+
+message CMessageCookStatusResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+  int32 cook_stage = 4;
+  string output_url = 5;
+  float percent = 6;
+}

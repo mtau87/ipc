@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageTaskBegin
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}
+
+message CMessageTaskEnd
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}

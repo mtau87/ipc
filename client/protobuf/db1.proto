@@ -1,0 +1,223 @@
+syntax = "proto3";
+
+package d5.db1;
+
+message asset_light_style
+{
+    string id = 1;
+    string folder_name = 2;
+    int64 create_time = 3;
+    int64 update_time = 4;
+    int32 is_del = 5;
+    string ue_path = 6;
+    string pak_url = 7;
+    int32 type = 8;
+    string thumbnail_url = 9;
+    string title = 10;
+}
+
+message asset_material
+{
+    string id = 1;
+    string title = 2;
+    string ue_path = 3;
+    string mat_info = 4;
+    string thumbnail_url = 5;
+    int32 is_del = 6;
+    int32 is_private = 7;
+    int32 user_id = 8;
+    int32 company_id = 9;
+    int64 create_time = 10;
+    int64 update_time = 11;
+    int32 category_id = 12;
+    int32 metallic = 17;
+    int32 roughness = 18;
+    int32 emissive_color = 19;
+    int32 type = 20;
+    int32 is_repeat = 21;
+    int32 source = 22;
+    int32 publish_status = 23;
+    string pak_url = 24;
+    string folder_name = 25;
+    int32 sync_status = 26;
+    string dependent_file_list = 27;
+}
+
+message asset_material_category
+{
+    int32 id = 1;
+    string title = 2;
+    int32 parent_id = 3;
+    int32 level = 4;
+}
+
+message effect_mode
+{
+    int32 id = 1;
+    string mode_name = 2;
+    string mode_data = 3;
+}
+
+message environment_light_template
+{
+    int32 id = 1;
+    string title = 2;
+    string thumbnail_url = 3;
+    double white_balance_temp = 4;
+    string film_tint = 5;
+    string film_tint_shadow = 6;
+    double film_tint_shadow_blend = 7;
+    double film_tint_shadow_amount = 8;
+    double film_saturation = 9;
+    double film_channel_mixer_red = 10;
+    double film_channel_mixer_green = 11;
+    double film_channel_mixer_blue = 12;
+    double film_contrast = 13;
+    double film_crush_shadows = 14;
+    double film_crush_highlights = 15;
+    double scene_color_vignette_intensity = 16;
+    double scene_color_grain_jitter = 17;
+    double scene_color_grain_intensity = 18;
+    double bloom_intensity = 19;
+    double bloom_threshold = 20;
+    double bloom_size_scale = 21;
+    string bloom_tint_1 = 22;
+    string bloom_tint_2 = 23;
+    string bloom_tint_3 = 24;
+    string bloom_tint_4 = 25;
+    string bloom_tint_5 = 26;
+    double bloom_dirt_mask_intensity = 27;
+    string bloom_dirt_mask_tint = 28;
+    double auto_exposure_exposure_bias = 29;
+    string global_illumination_indirect_lighting_color = 30;
+    double global_illumination_indirect_lighting_intensity = 31;
+    double ambient_occlusion_intensity = 32;
+    double ambient_occlusion_static_fraction = 33;
+    double ambient_occlusion_radius = 34;
+    int32 is_show = 35;
+    double min_brightness = 36;
+    double max_brightness = 37;
+}
+
+message furniture_color
+{
+    int32 id = 1;
+    string title = 2;
+    string hex = 3;
+}
+
+message furniture_main_material
+{
+    int32 id = 1;
+    string title = 2;
+}
+
+message furniture_style
+{
+    int32 id = 1;
+    string title = 2;
+}
+
+message outdoor_light_style
+{
+    int32 id = 1;
+    double directional_light_rotation = 2;
+    double directional_light_intensity = 3;
+    string directional_light_light_color = 4;
+    int32 directional_light_use_temperature = 5;
+    double directional_light_temperature = 6;
+    int32 directional_light_cast_shadows = 7;
+    double directional_light_shadow_bias = 8;
+    int32 directional_light_lighting_channels0 = 9;
+    int32 directional_light_lighting_channels1 = 10;
+    int32 directional_light_lighting_channels2 = 11;
+    double sky_light_intensity = 12;
+    string sky_light_light_color = 13;
+    string title = 14;
+    string thumbnail_url = 15;
+    string ue_path = 16;
+    double natural_material_lighting_intensity = 17;
+    string natural_material_lighting_color = 18;
+    int32 environment_light_id = 19;
+}
+
+message plan_design_template
+{
+    string id = 1;
+    string title = 2;
+    string design_file_url = 3;
+    double size = 4;
+    string pak_url = 6;
+    string thumbnail_url = 7;
+    string floor_edit_file_url = 8;
+    string detail_info = 9;
+    int32 district_id = 10;
+    int32 property_type_id = 11;
+    int32 room_type_id = 12;
+    int32 template_type_id = 13;
+    int64 create_time = 14;
+    int64 update_time = 15;
+    int32 is_published = 16;
+    string floor_ref_url = 17;
+    double floor_ref_width = 18;
+    double floor_ref_height = 19;
+}
+
+message plan_district
+{
+    int32 id = 1;
+    string name = 2;
+    int32 parent_id = 3;
+    int32 level = 4;
+}
+
+message plan_property_type
+{
+    int32 id = 1;
+    string title = 2;
+}
+
+message plan_room_type
+{
+    int32 id = 1;
+    string title = 2;
+}
+
+message plan_template_type
+{
+    int32 id = 1;
+    string title = 2;
+}
+
+message product_brand
+{
+    int32 id = 1;
+    string title = 2;
+}
+
+message product_category1
+{
+    int32 id = 1;
+    string title = 2;
+}
+
+message product_category2
+{
+    int32 id = 1;
+    int32 category1_id = 2;
+    string title = 3;
+}
+
+message product_category3
+{
+    int32 id = 1;
+    int32 category1_id = 2;
+    int32 category2_id = 3;
+    string title = 4;
+}
+
+message sqlite_sequence
+{
+    string name = 1;
+    string seq = 2;
+}

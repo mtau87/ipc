@@ -1,0 +1,90 @@
+syntax = "proto3";
+import "db2.proto";
+package d5;
+
+message CMessageDependentPakList
+{
+    repeated string fileList = 1;
+}
+
+message CMessageFilesUnit
+{
+    string url = 1;
+    d5.db2.files_map data = 2;
+}
+
+message CMessageSkpLoader
+{
+    int32 type = 1;
+    string uuid = 2;
+    string strSKPPath = 3;
+    string strD5MPath = 4;
+    string strTexturePath = 5;
+    bool withGroup = 6;
+    bool withComponent = 7;
+}
+
+message CMessageSkpLoaderResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}
+
+message CMessageSkpLoaderProcess
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 percent = 3;
+}
+
+message CMessageCADConverterRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string strCADPath = 3;
+    string strDXFPath = 4;
+}
+
+message CMessageCADConverterResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}
+
+message CMessageWatchDogRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+}
+
+message CMessageWatchDog
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    int32 source = 4;
+}
+
+message CMessageGeneratePannellumRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string strPicPath = 3;
+}
+
+message CMessageGeneratePannellumResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    string strCloudPath = 4;
+}
+
+message CMessageGeneratePannellumProcess
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 percent = 3;
+}

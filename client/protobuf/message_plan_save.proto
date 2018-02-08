@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageHttpPlanSave
+{
+    string id = 1;
+    string title = 2;
+    float size = 3;
+    string pakUrl = 5;
+    string thumbnailUrl = 6;
+    string floorEditFileUrl = 7;
+    string detailInfo = 8;
+    string designFileUrl = 9;
+    int32 districtId = 10;
+    int32 propertyTypeId = 11;
+    int32 roomTypeId = 12;
+    int32 templateTypeId = 13;
+    int64 createTime = 15;
+    int64 updateTime = 16;
+    string floorRefUrl = 20;
+    float floorRefWidth = 21;
+    float floorRefHeight = 22;
+    int32 groupId = 25;
+    int32 condoId = 26;
+    string dependentFileList = 30;
+    int32 source = 31;
+    string quotationInfo = 32;
+    int32 isPrivate = 33;
+}
+
+message CMessagePlanSaveRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string id = 3;
+}
+
+message CMessagePlanSaveResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}
+
+message CMessagePlanSaveProcessResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 percent = 3;
+}

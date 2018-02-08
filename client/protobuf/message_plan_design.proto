@@ -1,0 +1,124 @@
+syntax = "proto3";
+import "db2.proto";
+import "message_common.proto";
+package d5.db2;
+
+message CMessagePlanDesignCountRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string id = 3;
+    bool idValid = 4;
+    int32 companyId = 5;
+    bool companyIdValid = 6;
+    int32 userId = 7;
+    bool userIdValid = 8;
+    int32 groupId = 9;
+    bool groupIdValid = 10;
+}
+
+message CMessagePlanDesignCountResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    int32 number = 4;
+}
+
+message CMessagePlanDesignRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  string id = 3;
+  bool idValid = 4;
+  int32 companyId = 5;
+  bool companyIdValid = 6;
+  int32 userId = 7;
+  bool userIdValid = 8;
+  int32 groupId = 9;
+  bool groupIdValid = 10;
+  enum Order
+  {
+    NORMAL = 0;
+    ASC = 1;
+    DESC = 2;
+  }
+  Order title = 11;
+  Order updateTime = 12;
+  int32 pageNum = 13;
+  int32 pageSize = 14;
+  string titleName = 15;
+  bool titleNameValid = 16;
+  int32 syncStatus = 17;
+  bool syncStatusValid = 18;
+}
+
+message CMessagePlanDesignResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+  repeated plan_design list = 4;
+  int32 pageNum = 5;
+  int32 pageTotal = 6;
+  repeated d5.CMessageDependentPakList fileList = 7;
+}
+
+message CMessageAddPlanDesignRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    plan_design data = 3;
+    d5.CMessageDependentPakList fileList = 4;
+    int32 saveState = 5;
+}
+
+message CMessageAddPlanDesignResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}
+
+message CMessageAddPlanDesignProcessResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 percent = 3;
+}
+
+message CMessageDelPlanDesignRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string id = 3;
+}
+
+message CMessageDelPlanDesignResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+}
+
+message CMessagePlanDesignDownloadRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string id = 3;
+}
+
+message CMessagePlanDesignDownloadResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+    d5.CMessageDependentPakList fileList = 4;
+}
+
+message CMessagePlanDesignDownloadProcessResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 percent = 3;
+}

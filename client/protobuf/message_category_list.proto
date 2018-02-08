@@ -1,0 +1,27 @@
+syntax = "proto3";
+package d5;
+
+message CMessageCategoryListRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  bool isCustomCategory = 3;
+}
+
+message CMessageCategoryUnit
+{
+  int32 id = 1;
+  string title = 2;
+  int32 companyId = 3;
+  int32 parentId = 4;
+  int32 level = 5;
+  repeated CMessageCategoryUnit children = 6;
+}
+
+message CMessageCategoryListResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  int32 state = 3;
+  repeated CMessageCategoryUnit root = 4;
+}

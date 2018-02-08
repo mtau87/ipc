@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageHttpError
+{
+    int32 errorcode = 1;
+    string errormessage = 2;
+}
+
+message CMessageHttpErrorInfo
+{
+    int32 code = 1;
+    string msg = 2;
+}

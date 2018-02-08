@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageHttpProductUnit
+{
+    message CMessageHttpFurnitureUnit
+    {
+        string productId = 1;
+        string uePath = 2;
+        string pakUrl = 3;
+        float length = 4;
+        float depth = 5;
+        float height = 6;
+        int32 isInteractive = 7;
+        int32 intelligentType = 8;
+        repeated int32 furnitureColorIdList = 9;
+        int32 furnitureStyleId = 10;
+        int32 furnitureMainMaterialId = 11;
+        string detailInfo = 12;
+    }
+    message CMessageHttpBuildingMaterialUnit
+    {
+        string productId = 1;
+        int32 isForFloor = 2;
+        int32 isForWall = 3;
+        int32 isForCeiling = 4;
+        string materialId = 5;
+        string detailInfo = 6;
+        int32 length = 7;
+        int32 width = 8;
+    }
+    message CMessageHttpProductImageUnit
+    {
+        string id = 1;
+        int32 displayIndex = 2;
+        string fileUrl = 3;
+        string productId = 4;
+    }
+
+    string id = 1;
+    string title = 2;
+    string description = 3;
+    float price = 4;
+    int64 createTime = 5;
+    int64 updateTime = 6;
+    int32 brandId = 7;
+    int32 productType = 8;
+    int32 categoryId = 9;
+    string buyUrl = 10;
+    string brand = 11;
+    CMessageHttpFurnitureUnit furniture = 12;
+    repeated CMessageHttpProductImageUnit productImageList = 13;
+    string dependentFileList = 14;
+    CMessageHttpBuildingMaterialUnit buildingMaterial = 15;
+    string productCode = 16;
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageUploadRequest
+{
+  int32 type = 1;
+  string uuid = 2;
+  string url = 3;
+  bytes path = 4;
+}
+
+message CMessageUploadResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  string url = 3;
+  int32 state = 4;
+}
+
+message CMessageUploadProcessResponse
+{
+  int32 type = 1;
+  string uuid = 2;
+  string url = 3;
+  int32 size = 4;
+  int32 total = 5;
+}

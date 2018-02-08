@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessageKeeyAlive
+{
+  int32 type = 1;
+  string uuid = 2;
+}

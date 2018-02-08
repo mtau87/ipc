@@ -1,0 +1,35 @@
+syntax = "proto3";
+import "message_material_list.proto";
+import "message_product_list.proto";
+
+package d5;
+
+message CMessageHttpUpdateList
+{
+    message CMessageHttpUpdateListUnit
+    {
+        int32 id = 1;
+        string filePath = 2;
+        string md5 = 3;
+        int32 type = 4;
+        int64 fileSize = 5;
+    }
+
+    message CMessageHttpAppSqlFileUnit
+    {
+        int32 id = 1;
+        string filePath = 2;
+        int64 createTime = 3;
+        int32 minId = 4;
+    }
+
+    string currentVersion = 1;
+    string assetUrl = 2;
+    int32 ueVersion = 3;
+    repeated CMessageHttpUpdateListUnit updateFileList = 4;
+    string launcherVersion = 5;
+    string launcherPath = 7;
+    repeated CMessageHttpAppSqlFileUnit appSqlFileList = 9;
+    repeated CMessageProductUnit defaultProduct = 10;
+    repeated CMessageMaterialListUnit defaultMaterial = 11;
+}

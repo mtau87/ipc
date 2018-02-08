@@ -1,0 +1,361 @@
+syntax = "proto3";
+
+package d5.db2;
+
+message asset_building_material
+{
+    string product_id = 1;
+    int32 is_for_floor = 2;
+    int32 is_for_wall = 3;
+    int32 is_for_ceiling = 4;
+    string material_id = 5;
+    string detail_info = 6;
+    int32 length = 7;
+    int32 width = 8;
+}
+
+message asset_furniture
+{
+    string product_id = 1;
+    string ue_path = 2;
+    string pak_url = 3;
+    double length = 4;
+    double depth = 5;
+    double height = 6;
+    int32 is_interactive = 7;
+    int32 intelligent_type = 8;
+    int32 furniture_style_id = 9;
+    int32 furniture_main_material_id = 10;
+    string detail_info = 11;
+}
+
+message asset_furniture_style
+{
+    string id = 1;
+    string title = 2;
+    string thumbnail_url = 3;
+    int32 display_index = 4;
+    string product_id = 5;
+    int64 create_time = 6;
+    int64 update_time = 7;
+    int32 sync_status = 8;
+}
+
+message asset_furniture_style_material_map
+{
+    string id = 1;
+    string material_id = 2;
+    string style_id = 3;
+    int32 material_index = 4;
+    string element_name = 5;
+}
+
+message asset_material
+{
+    string id = 1;
+    string title = 2;
+    string ue_path = 3;
+    string mat_info = 4;
+    string thumbnail_url = 5;
+    int32 is_del = 6;
+    int32 is_private = 7;
+    int32 user_id = 8;
+    int32 company_id = 9;
+    int64 create_time = 10;
+    int64 update_time = 11;
+    int32 category_id = 12;
+    int32 metallic = 17;
+    int32 roughness = 18;
+    int32 emissive_color = 19;
+    int32 type = 20;
+    int32 is_repeat = 21;
+    int32 is_submit = 22;
+    int32 source = 23;
+    int32 sync_status = 24;
+    string pak_url = 25;
+    string dependent_file_list = 26;
+}
+
+message asset_material_category
+{
+    int32 id = 1;
+    string title = 2;
+    int32 parent_id = 3;
+    int32 level = 4;
+}
+
+message furniture_color_map
+{
+    int32 color_id = 2;
+    string product_id = 3;
+}
+
+message GA
+{
+    int32 cid = 1;
+}
+
+message plan_desgin_template_statu
+{
+    string id = 1;
+    int64 updatetime = 2;
+    string depend_files = 3;
+}
+
+message plan_design
+{
+    string id = 1;
+    string title = 2;
+    double size = 3;
+    string pak_url = 5;
+    string thumbnail_url = 6;
+    string floor_edit_file_url = 7;
+    string detail_info = 8;
+    string design_file_url = 9;
+    int32 district_id = 10;
+    int32 property_type_id = 11;
+    int32 room_type_id = 12;
+    int32 template_type_id = 13;
+    int32 cook_stage = 14;
+    int32 is_del = 15;
+    int64 create_time = 16;
+    int64 update_time = 17;
+    int32 user_id = 18;
+    int32 company_id = 19;
+    int32 sync_status = 20;
+    int32 floor_edit_error_code = 21;
+    string cook_id = 23;
+    string floor_ref_url = 24;
+    double floor_ref_width = 25;
+    double floor_ref_height = 26;
+    double floor_ref_angle = 27;
+    int32 group_id = 28;
+    int32 condo_id = 29;
+    string username = 30;
+    string dependent_file_list = 31;
+    int32 source = 32;
+    string quotation_info = 33;
+    int32 is_private = 34;
+}
+
+message product
+{
+    string id = 1;
+    string title = 2;
+    string description = 3;
+    double price = 4;
+    int64 create_time = 5;
+    int64 update_time = 6;
+    int32 brand_id = 7;
+    int32 source = 8;
+    int32 product_type = 9;
+    int32 is_published = 10;
+    int32 is_private = 11;
+    int32 is_del = 12;
+    int32 user_id = 13;
+    int32 company_id = 14;
+    string folder_name = 15;
+    int32 sync_status = 16;
+    int32 category_id = 17;
+    string buy_url = 18;
+    string dependent_file_list = 19;
+    string product_code = 20;
+}
+
+message product_detail_virtual
+{
+    string id = 1;
+    string title = 2;
+    string description = 3;
+    double price = 4;
+    int64 create_time = 5;
+    int64 update_time = 6;
+    int32 brand_id = 7;
+    int32 source = 8;
+    int32 product_type = 9;
+    int32 is_published = 10;
+    int32 is_private = 11;
+    int32 is_del = 12;
+    int32 user_id = 13;
+    int32 company_id = 14;
+    string folder_name = 15;
+    int32 sync_status = 16;
+    int32 category_id = 17;
+    string buy_url = 18;
+
+    string furniture_product_id = 19;
+    string furniture_ue_path = 20;
+    string furniture_pak_url = 21;
+    double furniture_length = 22;
+    double furniture_depth = 23;
+    double furniture_height = 24;
+    int32 furniture_is_interactive = 25;
+    int32 furniture_intelligent_type = 26;
+    int32 furniture_furniture_style_id = 27;
+    int32 furniture_furniture_main_material_id = 28;
+    string furniture_detail_info = 29;
+
+    string building_material_product_id = 30;
+    int32 building_material_is_for_floor = 31;
+    int32 building_material_is_for_wall = 32;
+    int32 building_material_is_for_ceiling = 33;
+    string building_material_material_id = 34;
+    string building_material_detail_info = 35;
+    int32 building_material_length = 36;
+    int32 building_material_width = 37;
+
+    string dependent_file_list = 38;
+    string product_code = 39;
+}
+
+message product_brand_temp
+{
+    string product_id = 1;
+    string brand = 2;
+}
+
+message product_category_map
+{
+    int32 id = 1;
+    int32 category_id = 2;
+    string product_id = 3;
+}
+
+message product_image
+{
+    string id = 1;
+    int32 display_index = 2;
+    string file_url = 3;
+    string product_id = 4;
+}
+
+message setting_remember
+{
+    int32 user_id = 1;
+    int32 layout_page_tip = 2;
+    int32 layout_do_not_show_again = 3;
+    int32 vr_capture_do_not_show_again = 4;
+    int64 sync_data_timestamp = 5;
+    string scalability = 6;
+    int32 magic_confirm_do_not_show_again = 7;
+    int32 decoration_page_tip = 8;
+    int32 material_replace_tip = 9;
+}
+
+message user_login
+{
+    string name = 1;
+    string password = 2;
+    int32 lastStatus = 3;
+}
+
+message files_map
+{
+    string file = 1;
+    string md5 = 2;
+    int64 update_time = 3;
+    int64 length = 4;
+    string type = 5;
+}
+
+message header
+{
+    string key = 1;
+    int64 create_time = 2;
+}
+
+message asset_building_material_db
+{
+    header head = 1;
+    repeated asset_building_material content= 2;
+}
+
+message asset_furniture_db
+{
+    header head = 1;
+    repeated asset_furniture content= 2;
+}
+
+message asset_furniture_style_db
+{
+    header head = 1;
+    repeated asset_furniture_style content= 2;
+}
+
+message asset_furniture_style_material_map_db
+{
+    header head = 1;
+    repeated asset_furniture_style_material_map content= 2;
+}
+
+message asset_material_db
+{
+    header head = 1;
+    repeated asset_material content= 2;
+}
+
+message asset_material_category_db
+{
+    header head = 1;
+    repeated asset_material_category content= 2;
+}
+
+message furniture_color_map_db
+{
+    header head = 1;
+    repeated furniture_color_map content= 2;
+}
+
+message GA_db
+{
+    header head = 1;
+    repeated GA content= 2;
+}
+
+message plan_desgin_template_statu_db
+{
+    header head = 1;
+    repeated plan_desgin_template_statu content= 2;
+}
+
+message plan_design_db
+{
+    header head = 1;
+    repeated plan_design content= 2;
+}
+
+message product_db
+{
+    header head = 1;
+    repeated product content= 2;
+}
+
+message product_brand_temp_db
+{
+    header head = 1;
+    repeated product_brand_temp content= 2;
+}
+
+message product_category_map_db
+{
+    header head = 1;
+    repeated product_category_map content= 2;
+}
+
+message product_image_db
+{
+    header head = 1;
+    repeated product_image content= 2;
+}
+
+message setting_remember_db
+{
+    header head = 1;
+    repeated setting_remember content= 2;
+}
+
+message user_login_db
+{
+    header head = 1;
+    repeated user_login content= 2;
+}

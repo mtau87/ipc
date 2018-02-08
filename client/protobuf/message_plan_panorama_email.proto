@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package d5;
+
+message CMessagePlanPanoramaEmailRequest
+{
+    int32 type = 1;
+    string uuid = 2;
+    string url = 3;
+    string email = 4;
+}
+
+message CMessagePlanPanoramaEmailResponse
+{
+    int32 type = 1;
+    string uuid = 2;
+    int32 state = 3;
+}
